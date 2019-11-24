@@ -31,7 +31,9 @@ html,
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background: #fff;
+    color: #fff;
+    background: #ce9898;
+    /* background: #8a9d96; */
 }
 
 .gh-main {
@@ -42,6 +44,8 @@ html,
 
 .gh-page {
     padding: 0 4vw;
+    color: #000;
+    background: #fff;
 }
 
 .gh-article {
@@ -50,11 +54,20 @@ html,
 
 .gh-postfeed {
     padding: 8vmin 0;
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+@media (max-width: 900px) {
+    .gh-postfeed {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 .gh-container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 0 auto;
 }
 
@@ -81,8 +94,13 @@ html,
 /* Index
 /* ---------------------------------------------------------- */
 
-.gh-card:not(:first-child) {
-    margin: 8vmin auto 0;
+.home-template .gh-hero {
+    min-height: 100vh;
+    padding-bottom: 4vw;
+}
+
+.home-template .gh-hero-content h1 {
+    font-size: 6vmin;
 }
 
 .gh-card-link {
@@ -94,13 +112,13 @@ html,
     width: 100%;
     max-height: 700px;
     object-fit: cover;
-    margin-bottom: 4vmin;
+    margin-bottom: 2vmin;
 }
 
 .gh-card-meta {
     display: block;
     margin: 0 0 1rem;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     line-height: 1.2em;
     letter-spacing: 0.5px;
     text-transform: uppercase;
@@ -110,13 +128,17 @@ html,
 .gh-card-content {
     max-width: 720px;
     margin: 0 auto;
-    text-align: center;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
+    line-height: 1.5em;
+}
+
+.gh-card-content h2 {
+    margin: 0;
+    font-size: 1.8rem;
 }
 
 .gh-card-content p {
-    margin: 1.2rem 0;
-    padding: 0 6vmin;
+    margin: 1rem 0;
 }
 
 .gh-card-content > strong {
@@ -193,8 +215,8 @@ html,
 /* ---------------------------------------------------------- */
 
 .gh-author-image {
-    height: 12vmin;
-    width: 12vmin;
+    height: 10vmin;
+    width: 10vmin;
     margin: 0 auto 1.5em;
     border-radius: 100%;
     overflow: hidden;
@@ -217,6 +239,7 @@ html,
     display: inline-flex;
     align-items: center;
     margin: 0 0.75vmin;
+    color: currentColor;
 }
 
 .gh-author-links a + a:before {
@@ -225,8 +248,9 @@ html,
     margin: 0 1.25vmin 0 0;
     height: 1em;
     width: 1px;
-    background: rgba(0,0,0,0.3);
+    background: currentColor;
     transform: rotate(20deg);
+    opacity: 0.4;
 }
 
 @media (max-width: 700px) {

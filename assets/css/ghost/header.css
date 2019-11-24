@@ -2,10 +2,11 @@
 /* ---------------------------------------------------------- */
 
 .gh-head {
+    position: relative;
+    z-index: 10;
     padding: 3vw 4vw;
     font-size: 1.6rem;
     line-height: 1.3em;
-    background: inherit;
 }
 
 .gh-head a {
@@ -13,7 +14,7 @@
     text-decoration: none;
 }
 
-.gh-head .gh-container {
+.gh-head-inner {
     display: grid;
     grid-gap: 40px;
     grid-template-columns: 1fr auto 1fr;
@@ -189,11 +190,58 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 /* Layout Variants
 /* ---------------------------------------------------------- */
 
+.gh-hero {
+    position: relative;
+    margin: calc(-46px - 6vw) 0 0;
+    padding: calc(46px + 6vw) 4vw 3vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.gh-hero-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.gh-hero-content {
+    position: relative;
+    max-width: 900px;
+    padding: 2vw 0 5vw;
+}
+
+.gh-hero-content h1 {
+    font-size: 5vmin;
+}
+
+.gh-hero-content > p {
+    max-width: 720px;
+    margin: 0.3em auto 0;
+    padding: 0 6vmin;
+    font-size: 2.2vmin;
+    line-height: 1.3em;
+    opacity: 0.6;
+}
+
+@media (max-width: 900px) {
+    .gh-hero-content > p {
+        font-size: 1.8rem;
+    }
+}
+
 .gh-head-brandnavactions .gh-head-brand {
     grid-column-start: 1;
 }
 
-.gh-head-brandnav .gh-container {
+.gh-head-brandnav .gh-head-inner {
     grid-gap: 0;
     grid-template-columns: auto max-content max-content;
 }
@@ -240,7 +288,6 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
         display: inline-block;
     }
     #gh-head {
-        transition: all 0.4s ease-out;
         overflow: hidden;
     }
     #gh-head .gh-container {
@@ -310,6 +357,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
         bottom: 0;
         left: 0;
         z-index: 900;
+        background: inherit;
         overflow-y: scroll;
     }
     .gh-head-open #gh-head .gh-container {

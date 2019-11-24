@@ -1,5 +1,14 @@
 {{!< default}}
 
+<header class="gh-hero">
+    {{#if @site.cover_image}}
+        <img class="gh-hero-img" src="{{@site.cover_image}}" alt="{{@site.title}}" />
+    {{/if}}
+    <div class="gh-hero-content">
+        <h1>{{@site.description}}</h1>
+    </div>
+</header>
+
 <div class="gh-page">
     <div class="gh-container">
 
@@ -13,3 +22,9 @@
 
     </div>
 </div>
+
+{{!-- <header class="gh-hero" {{#if @site.cover_image}}style="background-image: url({{@site.cover_image}})" {{/if}}>
+    <div class="gh-hero-content">
+        <h1>{{@site.description}}</h1>
+    </div>
+</header> --}}
