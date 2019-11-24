@@ -1,6 +1,6 @@
-# Ghost Starter Theme
+# Tribeca
 
-A starter framework for Ghost themes! Fork this repository and start your development here with all the main things you need to develop a custom Ghost theme.
+A simple, beautiful theme for [Ghost](https://ghost.org)
 
 &nbsp;
 
