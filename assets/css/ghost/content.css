@@ -155,17 +155,17 @@
     margin-top: 6vmin;
 }
 
-.kg-card figcaption {
+figcaption {
     padding: 1.5rem 1.5rem 0;
     text-align: center;
-    color: rgba(0,0,0,0.5);
+    color: rgba(255,255,255,0.8);
     font-weight: 600;
     font-size: 1.3rem;
     line-height: 1.4em;
 }
 
-.kg-card figcaption strong {
-    color: rgba(0,0,0,0.8);
+figcaption strong {
+    color: rgba(255,255,255,1);
 }
 
 .gh-canvas :not(pre) code {
