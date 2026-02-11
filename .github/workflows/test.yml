@@ -10,21 +10,13 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && !startsWith(github.head_ref, 'renovate/'))
     strategy:
-      fail-fast: false
       matrix:
-        include:
-          - node: '10'
-            gscan: '4.1.4'
-          - node: '22'
-            gscan: '5.2.4'
+        node: [ '22' ]
     name: Node ${{ matrix.node }}
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
-      - name: Pin gscan version
-        run: |
-          sed -i 's/"gscan": ".*"/"gscan": "${{ matrix.gscan }}"/' package.json
       - run: yarn
       - run: yarn test:ci
