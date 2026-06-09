@@ -74,7 +74,9 @@ async function zipper(done) {
         src([
             '**',
             '!node_modules', '!node_modules/**',
-            '!dist', '!dist/**'
+            '!dist', '!dist/**',
+            '!pnpm-lock.yaml',
+            '!pnpm-debug.log'
         ]),
         zipModule(filename),
         dest(targetDir)
