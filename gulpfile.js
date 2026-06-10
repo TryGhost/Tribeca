@@ -76,6 +76,7 @@ async function zipper(done) {
             '!node_modules', '!node_modules/**',
             '!dist', '!dist/**',
             '!pnpm-lock.yaml',
+            '!pnpm-workspace.yaml',
             '!pnpm-debug.log'
         ]),
         zipModule(filename),
